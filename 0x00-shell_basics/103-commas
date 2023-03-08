@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -xamp | sed ':a;N;$!ba;s/\n/, /g;s/\/\./\./g' && echo
