@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# install & configure an HAproxy
+apt-get update
+apt-get -y install haproxy
+echo "
+	listen myservers
+		bind *:80
+		server 379715-web-01 54.175.145.208:80 check
+		server 379715-web-02 54.144.198.102:80 check
+" >> /etc/haproxy/haproxy.cfg
+service haproxy restart
