@@ -22,7 +22,7 @@ frontend haproxy_balancer
     default_backend webservers
 
 frontend www-https
-    bind *:443 ssl crt /etc/letsencrypt/live/www.hamzaboutaleb.tech/www.hamzaboutaleb.tech.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.simotec.website/www.simotec.website.pem
     mode http
     default_backend webservers
 
