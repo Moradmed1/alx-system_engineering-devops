@@ -33,20 +33,20 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend tekbro.tech-http-frontend
+frontend simotec.website-http-frontend
         bind *:80
         mode http
         http-request set-header X-Forwarded-Proto http
-        default_backend  tekbro.tech-backend
+        default_backend  simotec.website-backend
 
 
-frontend  tekbro.tech-https-frontend
-        bind *:443 ssl crt /etc/haproxy/certs/tekbro.tech.pem
+frontend  simotec.website-https-frontend
+        bind *:443 ssl crt /etc/haproxy/certs/simotec.website.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend tekbro.tech-backend
+        default_backend simotec.website-backend
 
 
-backend tekbro.tech-backend
+backend simotec.website-backend
         balance roundrobin
         server 375496-web-01 100.25.13.38:80 check
         server 375496-web-02 54.175.145.208:80 check
