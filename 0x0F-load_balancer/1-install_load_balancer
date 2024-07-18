@@ -14,8 +14,8 @@ default_backend webservers
 
 backend webservers
 balance roundrobin
-server 379315-web-01 100.25.13.38:80 check
-server 379315-web-02 54.175.145.208:80 check
+server 375496-web-01 100.26.10.43:80 check
+server 375496-web-02 100.25.162.168:80 check
 "
 
 echo "$config" | sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null
